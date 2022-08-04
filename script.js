@@ -91,9 +91,6 @@ function addHoursAndFoodToBartender(nameValue, nameContainer){
    // Add hours field input
    console.log(nameValue)
    let capitalizedName = capitalizeName(nameValue)
-//    capitalizedName = capitalizedName.split("")
-//    capitalizedName[0] = capitalizedName[0].toUpperCase()
-//    capitalizedName = capitalizedName.join("")
    const hoursInput = document.createElement('input')
    hoursInput.type = 'number'
    hoursInput.placeholder = `Enter hours for ${capitalizedName}`
