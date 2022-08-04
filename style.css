@@ -33,8 +33,7 @@ h1{
 }
 input{
     border-radius: 3px;
-    /* background-color: lightgrey; */
-};
+}
 #bartenderNames{
     display: flex;
     flex-wrap: wrap;
@@ -110,9 +109,9 @@ input{
     align-self: center;
     background: linear-gradient(1deg, #A59D9D 0%, #fff 100%);
     border-radius: 25px;
-};
+}
 #output{
-    margin-top: 100px;
+    margin-top: 20px;
 
 }
 #functionButtons{
