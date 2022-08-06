@@ -282,6 +282,32 @@ function pushResults(names){
         output.appendChild(bartenderTip)
     }
 }
+const tillNumbers = document.getElementsByClassName('tillNumber')
+const addTill = document.getElementById('addTill')
+addTill.addEventListener('click', calculateTill)
+function calculateTill(){
+    const coinAmount = document.getElementById('coinAmount').value
+    const otherAmount = document.getElementById('otherAmount').value
+    let otherAndCoinAmount = Number(coinAmount) + Number(otherAmount)
+    const tillAmountsArray =[]
+    for(let i = 0; i < tillNumbers.length; i++){
+        console.log(tillNumbers[i].id)
+    }
+    for(let i = 0; i < tillNumbers.length; i++){
+        let number = tillNumbers[i].id * tillNumbers[i].value
+        tillAmountsArray.push(number)
+    }
+
+    let totalTillNumber = tillAmountsArray.reduce((a,b) => a + b) + otherAndCoinAmount
+    console.log(totalTillNumber)
+    console.log(otherAndCoinAmount)
+    console.log(tillAmountsArray)
+
+    let tillOutput = document.getElementById('tillOutput')
+    let finalTillOutput = document.createElement('h2')
+    finalTillOutput.innerHTML = `Total : ${totalTillNumber}`
+    tillOutput.appendChild(finalTillOutput)
+// addTill.addEventListener('')
 
 
-
+}
