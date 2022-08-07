@@ -179,11 +179,15 @@ function ensureFields(){
     }return true;
 }
 function hourlyRate(tips){
+    
     let hours = 0
+    const totalHours = document.createElement('h3')
     for(let i = 0; i < size; i++){
         hours += Number(names[i].hours)
     }
     console.log(hours)
+    totalHours.innerHTML = `Hours: ${hours}`
+    output.appendChild(totalHours)
     let rate = tips / hours
     return rate
 }
