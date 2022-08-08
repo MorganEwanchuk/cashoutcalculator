@@ -154,6 +154,7 @@ function handleCalculateTips(){
     console.log(rate)
     console.log(totalTips)
     console.log(size)
+    console.table(names)
     divideFood(names)
     calculateTips(rate)
     pushResults(names)
