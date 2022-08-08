@@ -122,7 +122,6 @@ calculateButton.addEventListener('click', handleCalculateTips)
 
 
 function handleCalculateTips(){
-    alert(names[0].name)
     if(tipField.value == ""){
         alert('Please enter tip value')
         return
@@ -247,6 +246,7 @@ function removeNameFromList(e){
     }
 
     const className = e.target.classList[0];
+    console.log(className)
     const namesArray = Object.values(names)
 
     const filteredArray = namesArray.filter(obj => obj.name !== className)
@@ -254,8 +254,7 @@ function removeNameFromList(e){
    
     size -= 1
     count -= 1
-    names = names.filter(obj => obj.name !== className)
-
+    names = names.filter(obj => obj.name !== idName)
 
 
 }
