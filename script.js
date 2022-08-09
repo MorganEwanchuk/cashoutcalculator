@@ -39,7 +39,8 @@ addName.addEventListener('keydown', (event) => {
 let removeButton = document.getElementsByClassName('removeButton')
 function addNameToList(nameValue){
     // Add key values to each name object
-    names[count] = {name: nameValue.toLowerCase()}
+    nameValue = nameValue.toLowerCase()
+    names[count] = {name: nameValue}
     names[count].hours = 0
     names[count].tips = 0
     names[count].food = 0
