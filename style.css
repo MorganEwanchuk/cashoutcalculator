@@ -102,3 +102,9 @@ input{
 #output{
     margin-top: 20px;
 }
+#functionButtons{
+    display: flex;
+}
+#calculate,#clear{
+    width: 50%;
+}
