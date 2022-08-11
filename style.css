@@ -50,7 +50,8 @@ input{
     flex: 1;
     flex-wrap: wrap;
     overflow: hidden;
-    flex-basis: 20%;
+    max-width: 50%;
+    flex-basis: 33%;
 }
 .nameContainer input{
     flex-basis: 100%;
@@ -62,12 +63,12 @@ input{
     flex-basis: 33%;
     display: flex;
     justify-content: center;
-    align-items: center;
 }
 .nameContainer button{
     flex-basis: 33%;
     max-width: 15px;
-    justify-self: flex-start;
+    display: flex;
+    justify-content: center;
 }
 
 
@@ -81,9 +82,7 @@ input{
 .totalTipsContainer{
     text-align: center;
 }
-.removeButton{
-    width: 30px;
-}
+
 #addContainer{
     display: flex;
     flex-direction: column;
