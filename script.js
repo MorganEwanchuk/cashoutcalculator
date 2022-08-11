@@ -69,6 +69,17 @@ function renderNameToList(nameValue){
     nameValue = nameValue.join("")
     console.log(nameValue)
     name.innerText = nameValue
+
+    // Add remove button
+    const removeButton = document.createElement('button')
+    removeButton.innerHTML = "X"
+    removeButton.setAttribute('id', `remove${nameValue.toLowerCase()}`)
+    removeButton.classList.add(`${nameValue.toLowerCase()}`)
+    removeButton.classList.add('removeButton')
+ 
+    removeButton.addEventListener('click', removeNameFromList)
+    nameContainer.appendChild(removeButton)
+
     nameContainer.appendChild(name)
     bartenderNames.appendChild(nameContainer)
     // Function that attaches hours and food field to each name
@@ -89,16 +100,16 @@ function addHoursAndFoodToBartender(nameValue, nameContainer){
    foodInput.setAttribute('id', `${nameValue}Food`)
 
    // Add remove button
-   const removeButton = document.createElement('button')
-   removeButton.innerHTML = "X"
-   removeButton.setAttribute('id', `remove${nameValue}`)
-   removeButton.classList.add(`${nameValue}`)
-   removeButton.classList.add('removeButton')
+//    const removeButton = document.createElement('button')
+//    removeButton.innerHTML = "X"
+//    removeButton.setAttribute('id', `remove${nameValue}`)
+//    removeButton.classList.add(`${nameValue}`)
+//    removeButton.classList.add('removeButton')
 
-   removeButton.addEventListener('click', removeNameFromList)
+//    removeButton.addEventListener('click', removeNameFromList)
 
     // Attaches both inputs to entered name
-    nameContainer.appendChild(removeButton)
+    // nameContainer.appendChild(removeButton)
     nameContainer.appendChild(hoursInput) 
     nameContainer.appendChild(foodInput) 
 
@@ -145,12 +156,9 @@ function handleCalculateTips(){
 }
 function clearAllInputs(){
     for(let i = 0; i < names.length; i++){
-        names[i].hours = ""
         names[i].food = ""
         names[i].tips = 0
         console.log(names)
-        let hours = document.querySelector(`#${names[i].name}Hours`)
-        hours.value = ""
         let food = document.querySelector(`#${names[i].name}Food`)
         food.value = ""
     }
