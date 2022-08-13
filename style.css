@@ -47,8 +47,26 @@ input{
 }
 .nameContainer{
     display: flex;
+    flex: 1;
     flex-wrap: wrap;
-    overflow: hidden
+    overflow: hidden;
+}
+.nameContainer input{
+    flex-basis: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.nameContainer p{
+    flex-basis: 33%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.nameContainer button{
+    flex-basis: 33%;
+    max-width: 15px;
+    justify-self: flex-start;
 }
 
 
