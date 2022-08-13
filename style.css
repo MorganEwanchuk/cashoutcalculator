@@ -50,6 +50,7 @@ input{
     flex: 1;
     flex-wrap: wrap;
     overflow: hidden;
+    flex-basis: 20%;
 }
 .nameContainer input{
     flex-basis: 100%;
