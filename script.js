@@ -55,7 +55,9 @@ function addNameToList(nameValue){
 
 function renderNameToList(nameValue){
     const nameContainer = document.createElement('div')
+    nameContainer.setAttribute('id', `${nameValue}`)
     nameContainer.classList.add('nameContainer')
+    nameContainer.classList.add(`${nameValue.toLowerCase()}`)
 
     const name = document.createElement('p')
     // Sets each rendered name with its name ID
@@ -70,7 +72,7 @@ function renderNameToList(nameValue){
     nameContainer.appendChild(name)
     bartenderNames.appendChild(nameContainer)
     // Function that attaches hours and food field to each name
-    addHoursAndFoodToBartender(nameValue, nameContainer)
+    addHoursAndFoodToBartender(nameValue.toLowerCase(), nameContainer)
 }
 
 function addHoursAndFoodToBartender(nameValue, nameContainer){
@@ -96,9 +98,9 @@ function addHoursAndFoodToBartender(nameValue, nameContainer){
    removeButton.addEventListener('click', removeNameFromList)
 
     // Attaches both inputs to entered name
-   nameContainer.appendChild(hoursInput) 
-   nameContainer.appendChild(foodInput) 
-   nameContainer.appendChild(removeButton)
+    nameContainer.appendChild(removeButton)
+    nameContainer.appendChild(hoursInput) 
+    nameContainer.appendChild(foodInput) 
 
 }
 
@@ -224,7 +226,8 @@ function removeNameFromList(e){
     let idName = e.target.id
     console.log(e.target)
     idName = idName.replace('remove', "")
-    const element = document.getElementById(idName)
+    console.log(idName.toLowerCase())
+    const element = document.getElementById(idName.toLowerCase())
     if(element){
         element.remove()
     }
