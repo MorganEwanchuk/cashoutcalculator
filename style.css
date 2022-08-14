@@ -45,6 +45,12 @@ input{
     flex-wrap: wrap;
     
 }
+.nameContainer{
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden
+}
+
 
 #addTips{
     height: 40px;
