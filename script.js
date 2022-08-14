@@ -203,7 +203,7 @@ function clearOutput(){
     }
 }
 function clear(){
-    const elements = document.querySelectorAll('.bartenderName')
+    const elements = document.querySelectorAll('.nameContainer')
     console.log(elements)
     elements.forEach(element =>{
         element.remove()
