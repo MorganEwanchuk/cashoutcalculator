@@ -54,6 +54,9 @@ function addNameToList(nameValue){
 
 
 function renderNameToList(nameValue){
+    const nameContainer = document.createElement('div')
+    nameContainer.classList.add('nameContainer')
+
     const name = document.createElement('p')
     // Sets each rendered name with its name ID
     name.setAttribute('id', `${nameValue}`)
@@ -64,12 +67,13 @@ function renderNameToList(nameValue){
     nameValue = nameValue.join("")
     console.log(nameValue)
     name.innerText = nameValue
-    bartenderNames.appendChild(name)
+    nameContainer.appendChild(name)
+    bartenderNames.appendChild(nameContainer)
     // Function that attaches hours and food field to each name
-    addHoursAndFoodToBartender(nameValue, name)
+    addHoursAndFoodToBartender(nameValue, nameContainer)
 }
 
-function addHoursAndFoodToBartender(nameValue, name){
+function addHoursAndFoodToBartender(nameValue, nameContainer){
    // Add hours field input
    const hoursInput = document.createElement('input')
    hoursInput.type = 'number'
@@ -92,9 +96,9 @@ function addHoursAndFoodToBartender(nameValue, name){
    removeButton.addEventListener('click', removeNameFromList)
 
     // Attaches both inputs to entered name
-   name.appendChild(hoursInput) 
-   name.appendChild(foodInput) 
-   name.appendChild(removeButton)
+   nameContainer.appendChild(hoursInput) 
+   nameContainer.appendChild(foodInput) 
+   nameContainer.appendChild(removeButton)
 
 }
 
