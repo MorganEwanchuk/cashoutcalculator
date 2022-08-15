@@ -33,6 +33,7 @@ input{
 #bartenderNames{
     display: flex;
     flex-wrap: wrap;
+    margin-top: 20px;
 }
 .bartenderName{
     flex: 1;
@@ -66,4 +67,7 @@ input{
     align-self: center;
     background: linear-gradient(1deg, #A59D9D 0%, #fff 100%);
     border-radius: 25px;
+};
+#output{
+    margin-top: 20px;
 }
