@@ -58,6 +58,11 @@ function renderNameToList(nameValue){
     // Sets each rendered name with its name ID
     name.setAttribute('id', `${nameValue}`)
     name.classList.add('bartenderName')
+    nameValue = String(nameValue)
+    nameValue = nameValue.toLowerCase().split("")
+    nameValue[0] = nameValue[0].toUpperCase()
+    nameValue = nameValue.join("")
+    console.log(nameValue)
     name.innerText = nameValue
     bartenderNames.appendChild(name)
     // Function that attaches hours and food field to each name
