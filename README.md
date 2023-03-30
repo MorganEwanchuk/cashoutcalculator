@@ -1,1 +1,1 @@
-# cashoutcalculator
+# Cashout calculator for MKT beer market
