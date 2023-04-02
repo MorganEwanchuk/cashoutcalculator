@@ -1,10 +1,16 @@
 let addButton = document.getElementById('addButton')
 let addName = document.getElementById('addName')
 
-let names = []
-
+let names = {}
+let count = 0
 addButton.addEventListener('click', () => {
-    names.push(addName.value)
+    
+    if(addName.value != ""){
+    names[count] = { name: addName.value}
+    count++
+}else{
+    return
+}
     console.log(names)
     addName.value = ""
 })
