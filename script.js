@@ -8,19 +8,24 @@ let count = 0
 addButton.addEventListener('click', () => {
     
     if(addName.value != ""){
-    names[count] = { name: addName.value}
     addNameToList(addName.value)
     count++
 }else{
     return
 }
-    console.log(names)
-    addName.value = ""
+console.log(names)
+addName.value = ""
 })
+function addNameToList(nameValue){
+    names[count] = {name: nameValue}
+    count++
+    addName.value = ""
+    renderNameToList(nameValue)
+}
 
-function addNameToList(name){
-    name = document.createElement('p')
-    name.innerText = addName.value
+function renderNameToList(nameValue){
+    const name = document.createElement('p')
+    name.classList.add(`${nameValue}`)
+    name.innerText = nameValue
     bartenderNames.appendChild(name)
-    
 }
