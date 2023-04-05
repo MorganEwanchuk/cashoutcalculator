@@ -16,6 +16,14 @@ addButton.addEventListener('click', () => {
 console.log(names)
 addName.value = ""
 })
+
+addName.addEventListener('keydown', (event) => {
+    if(event.key === 'Enter'){
+        event.preventDefault()
+        addNameToList(addName.value)
+    }
+})
+
 function addNameToList(nameValue){
     names[count] = {name: nameValue}
     count++
