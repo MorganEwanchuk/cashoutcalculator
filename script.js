@@ -20,7 +20,11 @@ addName.value = ""
 addName.addEventListener('keydown', (event) => {
     if(event.key === 'Enter'){
         event.preventDefault()
+        if(addName.value != ""){
         addNameToList(addName.value)
+        }else{
+            return
+        }
     }
 })
 
