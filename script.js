@@ -13,15 +13,14 @@ addButton.addEventListener('click', () => {
 }else{
     return
 }
-console.log(names)
-addName.value = ""
+
 })
 
 addName.addEventListener('keydown', (event) => {
     if(event.key === 'Enter'){
         event.preventDefault()
         if(addName.value != ""){
-        addNameToList(addName.value)
+            addNameToList(addName.value)
         }else{
             return
         }
@@ -30,6 +29,8 @@ addName.addEventListener('keydown', (event) => {
 
 function addNameToList(nameValue){
     names[count] = {name: nameValue}
+    names[count].hours = 3
+    console.log(names)
     count++
     addName.value = ""
     renderNameToList(nameValue)
