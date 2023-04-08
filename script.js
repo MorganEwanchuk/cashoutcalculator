@@ -41,4 +41,13 @@ function renderNameToList(nameValue){
     name.classList.add(`${nameValue}`)
     name.innerText = nameValue
     bartenderNames.appendChild(name)
+    addHoursToBartender(nameValue, name)
+}
+
+function addHoursToBartender(nameValue, name){
+   const hoursInput = document.createElement('input')
+   hoursInput.placeholder = `Enter hours for ${nameValue}`
+   hoursInput.classList.add(`${nameValue}`)
+   name.appendChild(hoursInput) 
+
 }
