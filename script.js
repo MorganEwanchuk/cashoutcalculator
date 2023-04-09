@@ -46,8 +46,14 @@ function renderNameToList(nameValue){
 
 function addHoursToBartender(nameValue, name){
    const hoursInput = document.createElement('input')
+   hoursInput.type = 'number'
+   const hoursInputButton = document.createElement('button')
    hoursInput.placeholder = `Enter hours for ${nameValue}`
    hoursInput.classList.add(`${nameValue}`)
+   hoursInputButton.classList.add(`${nameValue}Button`)
+   hoursInputButton.innerText = "Add Hours"
    name.appendChild(hoursInput) 
-
+   name.appendChild(hoursInputButton)
 }
+
+
