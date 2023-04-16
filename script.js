@@ -41,19 +41,29 @@ function renderNameToList(nameValue){
     name.classList.add(`${nameValue}`)
     name.innerText = nameValue
     bartenderNames.appendChild(name)
-    addHoursToBartender(nameValue, name)
+    addHoursAndFoodToBartender(nameValue, name)
 }
 
-function addHoursToBartender(nameValue, name){
+function addHoursAndFoodToBartender(nameValue, name){
+   // Add hours field input
    const hoursInput = document.createElement('input')
    hoursInput.type = 'number'
+    // Add food field input
+   const foodInput = document.createElement('input')
+   foodInput.type = 'number'
 
-   const hoursInputButton = document.createElement('button')
-   hoursInput.placeholder = `Enter hours for ${nameValue}`
-   hoursInput.classList.add(`${nameValue}`)
+//    const hoursInputButton = document.createElement('button')
+
+    hoursInput.placeholder = `Enter hours for ${nameValue}`
+    hoursInput.classList.add(`${nameValue}Hours`)
+
+    foodInput.placeholder = `Enter food for ${nameValue}`
+    foodInput.classList.add(`${nameValue}Food`)
 //    hoursInputButton.classList.add(`${nameValue}Button`)
 //    hoursInputButton.innerText = "Add Hours"
    name.appendChild(hoursInput) 
+   name.appendChild(foodInput) 
+
 //    name.appendChild(hoursInputButton)
 }
 
