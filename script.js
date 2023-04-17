@@ -1,7 +1,7 @@
 let addButton = document.getElementById('addButton')
 let addName = document.getElementById('addName')
 let bartenderNames = document.getElementById('bartenderNames')
-
+let calculateButton = document.getElementById('calculate')
 let names = {}
 let count = 0
 
@@ -66,5 +66,8 @@ function addHoursAndFoodToBartender(nameValue, name){
 
 //    name.appendChild(hoursInputButton)
 }
-
+calculateButton.addEventListener('click', () => {
+    const totalTips = document.getElementById('addTips').value
+    console.log(totalTips)
+})
 
