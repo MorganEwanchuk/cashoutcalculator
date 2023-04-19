@@ -4,7 +4,8 @@ let bartenderNames = document.getElementById('bartenderNames')
 let calculateButton = document.getElementById('calculate')
 let names = {}
 let count = 0
-
+let output = document.getElementById('output')
+let size = 0
 addButton.addEventListener('click', () => {
     
     if(addName.value != ""){
@@ -30,6 +31,8 @@ addName.addEventListener('keydown', (event) => {
 function addNameToList(nameValue){
     names[count] = {name: nameValue}
     names[count].hours = 3
+    names[count].tips = 0
+    size = Object.keys(names).length
     console.log(names)
     count++
     addName.value = ""
@@ -69,5 +72,10 @@ function addHoursAndFoodToBartender(nameValue, name){
 calculateButton.addEventListener('click', () => {
     const totalTips = document.getElementById('addTips').value
     console.log(totalTips)
+    console.log(size)
+    for(let i = 0; i < size; i++){
+        names[i].tips = totalTips / size
+        console.log(names)
+    }
 })
 
