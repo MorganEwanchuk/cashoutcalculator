@@ -30,7 +30,7 @@ addName.addEventListener('keydown', (event) => {
 
 function addNameToList(nameValue){
     names[count] = {name: nameValue}
-    names[count].hours = 3
+    names[count].hours = 0
     names[count].tips = 0
     size = Object.keys(names).length
     console.log(names)
@@ -41,7 +41,7 @@ function addNameToList(nameValue){
 
 function renderNameToList(nameValue){
     const name = document.createElement('p')
-    name.classList.add(`${nameValue}`)
+    name.setAttribute('id', `${nameValue}`)
     name.innerText = nameValue
     bartenderNames.appendChild(name)
     addHoursAndFoodToBartender(nameValue, name)
@@ -58,7 +58,7 @@ function addHoursAndFoodToBartender(nameValue, name){
 //    const hoursInputButton = document.createElement('button')
 
     hoursInput.placeholder = `Enter hours for ${nameValue}`
-    hoursInput.classList.add(`${nameValue}Hours`)
+    hoursInput.setAttribute('id', `${nameValue}Hours`)
 
     foodInput.placeholder = `Enter food for ${nameValue}`
     foodInput.classList.add(`${nameValue}Food`)
@@ -71,6 +71,13 @@ function addHoursAndFoodToBartender(nameValue, name){
 }
 calculateButton.addEventListener('click', () => {
     const totalTips = document.getElementById('addTips').value
+    for(let i = 0; i < size; i++){
+        console.log(names)
+        const bartenderHours = document.getElementById(`${names[i].name}Hours`)
+        console.log(bartenderHours)
+        names[i].hours = bartenderHours.value
+        console.log(names)
+    }
     console.log(totalTips)
     console.log(size)
     for(let i = 0; i < size; i++){
@@ -78,4 +85,10 @@ calculateButton.addEventListener('click', () => {
         console.log(names)
     }
 })
+function hourlyRate(tips){
+    const hours = 0
+    for(let i = 0; i < size; i++){
+        hours += names[i].hours
+    }
+}
 
