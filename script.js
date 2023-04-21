@@ -74,21 +74,37 @@ calculateButton.addEventListener('click', () => {
     for(let i = 0; i < size; i++){
         console.log(names)
         const bartenderHours = document.getElementById(`${names[i].name}Hours`)
-        console.log(bartenderHours)
         names[i].hours = bartenderHours.value
         console.log(names)
     }
+    let rate = hourlyRate(totalTips)
+    console.log(rate)
     console.log(totalTips)
     console.log(size)
-    for(let i = 0; i < size; i++){
-        names[i].tips = totalTips / size
-        console.log(names)
-    }
+    calculateTips(rate)
+    // for(let i = 0; i < size; i++){
+    //     names[i].tips = totalTips / size
+    //     console.log(names)
+    // }
+    pushResults(names)
 })
 function hourlyRate(tips){
-    const hours = 0
+    let hours = 0
     for(let i = 0; i < size; i++){
-        hours += names[i].hours
+        hours += Number(names[i].hours)
+    }
+    console.log(hours)
+    let rate = tips / hours
+    return rate
+}
+function calculateTips(rate){
+    for(let i = 0; i < size; i++){
+        names[i].tips = names[i].hours * rate
+        console.log(names)
     }
 }
-
+function pushResults(names){
+    const header = document.createElement('h1')
+    header.innerHTML = "Tip amounts:"
+    output.appendChild(header)
+}
