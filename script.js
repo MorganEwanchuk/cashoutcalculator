@@ -107,4 +107,10 @@ function pushResults(names){
     const header = document.createElement('h1')
     header.innerHTML = "Tip amounts:"
     output.appendChild(header)
+
+    for(let i = 0; i < size; i++){
+        const bartenderTip = document.createElement('p')
+        bartenderTip.innerHTML = `${names[i].name}: ${names[i].tips}`
+        output.appendChild(bartenderTip)
+    }
 }
