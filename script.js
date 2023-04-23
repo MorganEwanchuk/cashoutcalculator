@@ -99,7 +99,7 @@ function hourlyRate(tips){
 }
 function calculateTips(rate){
     for(let i = 0; i < size; i++){
-        names[i].tips = names[i].hours * rate
+        names[i].tips = names[i].hours * rate.toFixed(2).slice(0,-1)
         console.log(names)
     }
 }
