@@ -32,6 +32,7 @@ function addNameToList(nameValue){
     names[count] = {name: nameValue}
     names[count].hours = 0
     names[count].tips = 0
+    names[count].food = 0
     size = Object.keys(names).length
     console.log(names)
     count++
@@ -61,7 +62,7 @@ function addHoursAndFoodToBartender(nameValue, name){
     hoursInput.setAttribute('id', `${nameValue}Hours`)
 
     foodInput.placeholder = `Enter food for ${nameValue}`
-    foodInput.classList.add(`${nameValue}Food`)
+    foodInput.setAttribute('id', `${nameValue}Food`)
 //    hoursInputButton.classList.add(`${nameValue}Button`)
 //    hoursInputButton.innerText = "Add Hours"
    name.appendChild(hoursInput) 
@@ -74,18 +75,17 @@ calculateButton.addEventListener('click', () => {
     for(let i = 0; i < size; i++){
         console.log(names)
         const bartenderHours = document.getElementById(`${names[i].name}Hours`)
+        const bartenderFood = document.getElementById(`${names[i].name}Food`)
         names[i].hours = bartenderHours.value
+        names[i].food = bartenderFood.value
         console.log(names)
     }
     let rate = hourlyRate(totalTips)
     console.log(rate)
     console.log(totalTips)
     console.log(size)
+    divideFood(names)
     calculateTips(rate)
-    // for(let i = 0; i < size; i++){
-    //     names[i].tips = totalTips / size
-    //     console.log(names)
-    // }
     pushResults(names)
 })
 function hourlyRate(tips){
@@ -97,9 +97,34 @@ function hourlyRate(tips){
     let rate = tips / hours
     return rate
 }
+function divideFood(names){
+    for(let i = 0; i < size; i++){
+        const currentName = names[i].name
+        const divideFood = names[i].food / (size - 1)
+        console.log(currentName)
+        console.log(divideFood)
+        
+        for(let i = 0; i < size; i++){
+            
+                if(names[i].name == currentName){
+                    console.log(names[i])
+                    names[i].tips -= names[i].food
+                    distributeFood(names[i], divideFood)
+                }
+            
+        }
+    }
+}
+function distributeFood(name, food){
+    for(let i = 0; i < size; i++){
+        if(names[i] !== name){
+            names[i].tips += food
+        }
+    }
+}
 function calculateTips(rate){
     for(let i = 0; i < size; i++){
-        names[i].tips = names[i].hours * rate.toFixed(2).slice(0,-1)
+        names[i].tips += names[i].hours * rate.toFixed(2).slice(0,-1)
         console.log(names)
     }
 }
@@ -114,3 +139,4 @@ function pushResults(names){
         output.appendChild(bartenderTip)
     }
 }
+
