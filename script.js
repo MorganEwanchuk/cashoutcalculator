@@ -52,23 +52,19 @@ function addHoursAndFoodToBartender(nameValue, name){
    // Add hours field input
    const hoursInput = document.createElement('input')
    hoursInput.type = 'number'
+   
+   hoursInput.placeholder = `Enter hours for ${nameValue}`
+   hoursInput.setAttribute('id', `${nameValue}Hours`)
     // Add food field input
    const foodInput = document.createElement('input')
    foodInput.type = 'number'
+   foodInput.placeholder = `Enter food for ${nameValue}`
+   foodInput.setAttribute('id', `${nameValue}Food`)
 
-//    const hoursInputButton = document.createElement('button')
-
-    hoursInput.placeholder = `Enter hours for ${nameValue}`
-    hoursInput.setAttribute('id', `${nameValue}Hours`)
-
-    foodInput.placeholder = `Enter food for ${nameValue}`
-    foodInput.setAttribute('id', `${nameValue}Food`)
-//    hoursInputButton.classList.add(`${nameValue}Button`)
-//    hoursInputButton.innerText = "Add Hours"
+    // Attaches both inputs to entered name
    name.appendChild(hoursInput) 
    name.appendChild(foodInput) 
 
-//    name.appendChild(hoursInputButton)
 }
 calculateButton.addEventListener('click', () => {
     const totalTips = document.getElementById('addTips').value
@@ -140,3 +136,12 @@ function pushResults(names){
     }
 }
 
+
+
+// per hr 22.4
+
+// 7 morgan = 156.8 food 11.55 // 145.25
+// 6 amber = 134.4   // 137.28
+// 4 jake= 89.6    // 92.48
+// 3 evan= 67.2  // 70.08
+// 5 skylar= 112 // 114.88
