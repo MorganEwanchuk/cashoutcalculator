@@ -138,10 +138,3 @@ function pushResults(names){
 
 
 
-// per hr 22.4
-
-// 7 morgan = 156.8 food 11.55 // 145.25
-// 6 amber = 134.4   // 137.28
-// 4 jake= 89.6    // 92.48
-// 3 evan= 67.2  // 70.08
-// 5 skylar= 112 // 114.88
