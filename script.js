@@ -120,7 +120,7 @@ function distributeFood(name, food){
 }
 function calculateTips(rate){
     for(let i = 0; i < size; i++){
-        names[i].tips += names[i].hours * rate.toFixed(2).slice(0,-1)
+        names[i].tips += names[i].hours * rate.toFixed(2)
         console.log(names)
     }
 }
