@@ -6,16 +6,19 @@ let names = {}
 let count = 0
 let output = document.getElementById('output')
 let size = 0
-addButton.addEventListener('click', () => {
-    
-    if(addName.value != ""){
-    addNameToList(addName.value)
-    count++
-}else{
-    return
-}
 
-})
+addButton.addEventListener('touchstart', handleAddBartender, false)
+function handleAddBartender(event){
+    console.log(event)
+    if(event.type === 'touchstart'){
+        event.preventDefault()
+        if(addName.value != ""){
+            addNameToList(addName.value)
+        }else{
+            return
+        }
+    }
+}
 
 addName.addEventListener('keydown', (event) => {
     if(event.key === 'Enter'){
@@ -70,10 +73,13 @@ function addHoursAndFoodToBartender(nameValue, name){
    name.appendChild(foodInput) 
 
 }
-calculateButton.addEventListener('click', () => {
+calculateButton.addEventListener('touchstart', () => {
     const totalTips = document.getElementById('addTips').value
+    
+    
     for(let i = 0; i < size; i++){
         console.log(names)
+        console.log(`${names[i].name}`)
         const bartenderHours = document.getElementById(`${names[i].name}Hours`)
         const bartenderFood = document.getElementById(`${names[i].name}Food`)
         names[i].hours = bartenderHours.value
