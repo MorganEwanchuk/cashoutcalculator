@@ -29,22 +29,27 @@ addName.addEventListener('keydown', (event) => {
 })
 
 function addNameToList(nameValue){
+    // Add key values to each name object
     names[count] = {name: nameValue}
     names[count].hours = 0
     names[count].tips = 0
     names[count].food = 0
+    // Gets length of main object
     size = Object.keys(names).length
     console.log(names)
     count++
+    // Resets name input field
     addName.value = ""
     renderNameToList(nameValue)
 }
 
 function renderNameToList(nameValue){
     const name = document.createElement('p')
+    // Sets each rendered name with its name ID
     name.setAttribute('id', `${nameValue}`)
     name.innerText = nameValue
     bartenderNames.appendChild(name)
+    // Function that attaches hours and food field to each name
     addHoursAndFoodToBartender(nameValue, name)
 }
 
@@ -52,7 +57,6 @@ function addHoursAndFoodToBartender(nameValue, name){
    // Add hours field input
    const hoursInput = document.createElement('input')
    hoursInput.type = 'number'
-   
    hoursInput.placeholder = `Enter hours for ${nameValue}`
    hoursInput.setAttribute('id', `${nameValue}Hours`)
     // Add food field input
