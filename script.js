@@ -8,9 +8,11 @@ let output = document.getElementById('output')
 let size = 0
 
 addButton.addEventListener('touchstart', handleAddBartender, false)
+addButton.addEventListener('click', handleAddBartender, false)
+
 function handleAddBartender(event){
     console.log(event)
-    if(event.type === 'touchstart'){
+    if(event.type === 'touchstart' || event.type === 'click'){
         event.preventDefault()
         if(addName.value != ""){
             addNameToList(addName.value)
