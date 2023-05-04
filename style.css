@@ -1,0 +1,8 @@
+#bartenderNames{
+    display: flex;
+    flex-wrap: wrap;
+}
+.bartenderName{
+    flex: 1;
+    display: flex;
+}
