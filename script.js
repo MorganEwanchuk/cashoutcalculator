@@ -52,6 +52,7 @@ function renderNameToList(nameValue){
     const name = document.createElement('p')
     // Sets each rendered name with its name ID
     name.setAttribute('id', `${nameValue}`)
+    name.classList.add('bartenderName')
     name.innerText = nameValue
     bartenderNames.appendChild(name)
     // Function that attaches hours and food field to each name
