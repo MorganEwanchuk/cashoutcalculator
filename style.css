@@ -6,6 +6,7 @@
 header{
     box-shadow: 0 4px 2px -2px black;
     margin-bottom: 10px;
+    
 }
 h1{
     margin: 10px;
@@ -20,4 +21,13 @@ h1{
 .bartenderName{
     flex: 1;
     display: flex;
+}
+#addTips{
+    height: 40px;
+    font-style: bold;
+    font-size: 150%;
+    text-align: center;
+}
+.totalTipsContainer{
+    text-align: center;
 }
