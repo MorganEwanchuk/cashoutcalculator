@@ -71,9 +71,15 @@ function addHoursAndFoodToBartender(nameValue, name){
    foodInput.placeholder = `Enter food for ${nameValue}`
    foodInput.setAttribute('id', `${nameValue}Food`)
 
+   // Add remove button
+   const removeButton = document.createElement('button')
+   removeButton.innerHTML = "X"
+   removeButton.setAttribute('id', `remove${nameValue}`)
+   removeButton.classList.add('removeButton')
     // Attaches both inputs to entered name
    name.appendChild(hoursInput) 
    name.appendChild(foodInput) 
+   name.appendChild(removeButton)
 
 }
 
