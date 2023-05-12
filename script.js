@@ -32,7 +32,7 @@ addName.addEventListener('keydown', (event) => {
         }
     }
 })
-
+let removeButton = document.getElementsByClassName('removeButton')
 function addNameToList(nameValue){
     // Add key values to each name object
     names[count] = {name: nameValue}
@@ -75,7 +75,12 @@ function addHoursAndFoodToBartender(nameValue, name){
    const removeButton = document.createElement('button')
    removeButton.innerHTML = "X"
    removeButton.setAttribute('id', `remove${nameValue}`)
+   removeButton.classList.add(`${nameValue}`)
    removeButton.classList.add('removeButton')
+
+   removeButton.addEventListener('click', removeNameFromList)
+//    removeButton.addEventListener('touchstart', removeNameFromList)
+
     // Attaches both inputs to entered name
    name.appendChild(hoursInput) 
    name.appendChild(foodInput) 
@@ -161,6 +166,28 @@ function distributeFood(name, food){
             names[i].tips += food
         }
     }
+}
+function removeNameFromList(e){
+    let idName = e.target.id
+    idName = idName.replace('remove', "")
+    const element = document.getElementById(idName)
+    if(element){
+        element.remove()
+    }
+
+    const className = e.target.classList[0];
+    const namesArray = Object.values(names)
+
+    const filteredArray = namesArray.filter(obj => obj.name !== className)
+
+    const updatedNames = {}
+    filteredArray.forEach(obj => {
+        updatedNames[obj.id] = obj
+    })
+    size -= 1
+    names = updatedNames
+
+
 }
 function calculateTips(rate){
     for(let i = 0; i < size; i++){
