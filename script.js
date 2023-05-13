@@ -21,7 +21,7 @@ function handleAddBartender(event){
         }
     }
 }
-
+// Add name event listener 
 addName.addEventListener('keydown', (event) => {
     if(event.key === 'Enter'){
         event.preventDefault()
