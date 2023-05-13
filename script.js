@@ -2,7 +2,7 @@ let addButton = document.getElementById('addButton')
 let addName = document.getElementById('addName')
 let bartenderNames = document.getElementById('bartenderNames')
 let calculateButton = document.getElementById('calculate')
-let names = {}
+let names = []
 let count = 0
 let output = document.getElementById('output')
 let size = 0
@@ -169,6 +169,7 @@ function distributeFood(name, food){
 }
 function removeNameFromList(e){
     let idName = e.target.id
+    console.log(e.target)
     idName = idName.replace('remove', "")
     const element = document.getElementById(idName)
     if(element){
@@ -180,12 +181,11 @@ function removeNameFromList(e){
 
     const filteredArray = namesArray.filter(obj => obj.name !== className)
 
-    const updatedNames = {}
-    filteredArray.forEach(obj => {
-        updatedNames[obj.id] = obj
-    })
+   
     size -= 1
-    names = updatedNames
+    count -= 1
+    names = names.filter(obj => obj.name !== className)
+
 
 
 }
