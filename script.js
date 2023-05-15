@@ -6,6 +6,10 @@ let names = []
 let count = 0
 let output = document.getElementById('output')
 let size = 0
+const tipField = document.getElementById('addTips')
+
+const clearButton = document.getElementById('clear')
+clearButton.addEventListener('click', clear)
 
 addButton.addEventListener('touchstart', handleAddBartender, false)
 addButton.addEventListener('click', handleAddBartender, false)
@@ -47,6 +51,7 @@ function addNameToList(nameValue){
     addName.value = ""
     renderNameToList(nameValue)
 }
+
 
 function renderNameToList(nameValue){
     const name = document.createElement('p')
@@ -92,8 +97,7 @@ calculateButton.addEventListener('click', handleCalculateTips)
 // calculateButton.addEventListener('touchstart', handleCalculateTips)
 
 function handleCalculateTips(){
-    const totalTips = document.getElementById('addTips').value
-    
+    const totalTips = tipField.value
     
     for(let i = 0; i < size; i++){
         console.log(names)
@@ -170,6 +174,24 @@ function distributeFood(name, food){
         }
     }
 }
+function clear(){
+    const elements = document.querySelectorAll('.bartenderName')
+    console.log(elements)
+    elements.forEach(element =>{
+        element.remove()
+    })
+    while(output.firstChild){
+
+        output.removeChild(output.firstChild)
+    }
+    names = [];
+    count = 0;
+    size = 0;
+    tipField.value = ""
+    console.log(names)
+
+
+}
 function removeNameFromList(e){
     let idName = e.target.id
     console.log(e.target)
@@ -193,6 +215,7 @@ function removeNameFromList(e){
 
 }
 function calculateTips(rate){
+   
     for(let i = 0; i < size; i++){
         // names[i].tips += names[i].hours * rate.toFixed(2)
         names[i].tips = (Number(names[i].tips) + Number(names[i].hours * rate)).toFixed(2)
