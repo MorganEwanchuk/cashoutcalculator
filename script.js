@@ -84,7 +84,6 @@ function addHoursAndFoodToBartender(nameValue, name){
    removeButton.classList.add('removeButton')
 
    removeButton.addEventListener('click', removeNameFromList)
-//    removeButton.addEventListener('touchstart', removeNameFromList)
 
     // Attaches both inputs to entered name
    name.appendChild(hoursInput) 
@@ -94,7 +93,6 @@ function addHoursAndFoodToBartender(nameValue, name){
 }
 
 calculateButton.addEventListener('click', handleCalculateTips)
-// calculateButton.addEventListener('touchstart', handleCalculateTips)
 
 function handleCalculateTips(){
     const totalTips = tipField.value
@@ -119,27 +117,7 @@ function handleCalculateTips(){
     calculateTips(rate)
     pushResults(names)
 }
-// calculateButton.addEventListener('touchstart', () => {
-//     const totalTips = document.getElementById('addTips').value
-    
-    
-//     for(let i = 0; i < size; i++){
-//         console.log(names)
-//         console.log(`${names[i].name}`)
-//         const bartenderHours = document.getElementById(`${names[i].name}Hours`)
-//         const bartenderFood = document.getElementById(`${names[i].name}Food`)
-//         names[i].hours = bartenderHours.value
-//         names[i].food = bartenderFood.value
-//         console.log(names)
-//     }
-//     let rate = hourlyRate(totalTips)
-//     console.log(rate)
-//     console.log(totalTips)
-//     console.log(size)
-//     divideFood(names)
-//     calculateTips(rate)
-//     pushResults(names)
-// })
+
 function hourlyRate(tips){
     let hours = 0
     for(let i = 0; i < size; i++){
