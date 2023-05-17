@@ -108,7 +108,7 @@ function handleCalculateTips(){
     }
     let rate = hourlyRate(totalTips)
     let pushRateToDom = document.createElement('h3')
-    pushRateToDom.innerHTML = `Rate: ${rate}`
+    pushRateToDom.innerHTML = `Rate: ${rate.toFixed(2)}`
     output.appendChild(pushRateToDom)
     console.log(rate)
     console.log(totalTips)
