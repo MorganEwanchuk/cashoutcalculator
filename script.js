@@ -69,6 +69,7 @@ function addHoursAndFoodToBartender(nameValue, name){
    const hoursInput = document.createElement('input')
    hoursInput.type = 'number'
    hoursInput.placeholder = `Enter hours for ${nameValue}`
+   hoursInput.classList.add('hoursAmount')
    hoursInput.setAttribute('id', `${nameValue}Hours`)
     // Add food field input
    const foodInput = document.createElement('input')
@@ -95,6 +96,11 @@ function addHoursAndFoodToBartender(nameValue, name){
 calculateButton.addEventListener('click', handleCalculateTips)
 
 function handleCalculateTips(){
+    if(tipField.value == ""){
+        alert('Please enter tip value')
+        return
+    }
+    
     const totalTips = tipField.value
     
     for(let i = 0; i < size; i++){
@@ -106,6 +112,11 @@ function handleCalculateTips(){
         names[i].food = bartenderFood.value
         console.log(names)
     }
+
+    if(!ensureFields()){
+       return
+    }
+
     let rate = hourlyRate(totalTips)
     let pushRateToDom = document.createElement('h3')
     pushRateToDom.innerHTML = `Rate: ${rate.toFixed(2)}`
@@ -117,7 +128,15 @@ function handleCalculateTips(){
     calculateTips(rate)
     pushResults(names)
 }
-
+function ensureFields(){
+    for(let i = 0; i < names.length; i++){
+        if(names[i].hours == ""){
+            console.log(names[i].hours)
+            alert('Please fill out required fields')
+            return false;
+        }
+    }return true;
+}
 function hourlyRate(tips){
     let hours = 0
     for(let i = 0; i < size; i++){
