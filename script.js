@@ -132,7 +132,7 @@ function ensureFields(){
     for(let i = 0; i < names.length; i++){
         if(names[i].hours == ""){
             console.log(names[i].hours)
-            alert('Please fill out required fields')
+            alert('Please fill out all hours')
             return false;
         }
     }return true;
