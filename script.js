@@ -100,7 +100,10 @@ function handleCalculateTips(){
         alert('Please enter tip value')
         return
     }
-    
+    if(names.length == 0){
+        alert('Please add at least 1 bartender')
+        return
+    }
     const totalTips = tipField.value
     
     for(let i = 0; i < size; i++){
