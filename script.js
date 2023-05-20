@@ -130,6 +130,19 @@ function handleCalculateTips(){
     divideFood(names)
     calculateTips(rate)
     pushResults(names)
+    clearAllInputs()
+}
+function clearAllInputs(){
+    for(let i = 0; i < names.length; i++){
+        names[i].hours = ""
+        names[i].food = ""
+        names[i].tips = 0
+        console.log(names)
+        let hours = document.querySelector(`#${names[i].name}Hours`)
+        hours.value = ""
+        let food = document.querySelector(`#${names[i].name}Food`)
+        food.value = ""
+    }
 }
 function ensureFields(){
     for(let i = 0; i < names.length; i++){
