@@ -4,15 +4,28 @@
     padding: 0px;
 }
 header{
-    box-shadow: 0 4px 2px -2px black;
+    box-shadow: 1px 10px 10px 0px #919191;
     margin-bottom: 10px;
-    
+    display: flex;
+    align-items: center;
+    background-color: black;
+}
+img{
+    margin: 10px;
+    margin-top: 12px;
+    margin-bottom: 20px;
+    width: 100px; 
+    height: 80px;
 }
 h1{
     margin: 10px;
     margin-bottom: 12px;
+    margin-right: 105px;
     padding: 10px;
     text-align: center;
+    color: lightgray;
+    text-decoration: underline;
+    flex: 2;
 }
 #bartenderNames{
     display: flex;
