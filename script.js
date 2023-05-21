@@ -119,7 +119,7 @@ function handleCalculateTips(){
     if(!ensureFields()){
        return
     }
-
+    clearOutput()
     let rate = hourlyRate(totalTips)
     let pushRateToDom = document.createElement('h3')
     pushRateToDom.innerHTML = `Rate: ${rate.toFixed(2)}`
@@ -185,6 +185,12 @@ function distributeFood(name, food){
         if(names[i] !== name){
             names[i].tips += food
         }
+    }
+}
+function clearOutput(){
+    while(output.firstChild){
+
+        output.removeChild(output.firstChild)
     }
 }
 function clear(){
