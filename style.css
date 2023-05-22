@@ -52,6 +52,7 @@ input{
     overflow: hidden;
     max-width: 50%;
     flex-basis: 33%;
+    margin-top: 10px;
 }
 .nameContainer input{
     flex-basis: 100%;
@@ -100,10 +101,12 @@ input{
     border-radius: 25px;
 };
 #output{
-    margin-top: 20px;
+    margin-top: 100px;
+
 }
 #functionButtons{
     display: flex;
+    margin-top: 20px;
 }
 #calculate,#clear{
     width: 50%;
