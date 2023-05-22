@@ -74,7 +74,7 @@ function renderNameToList(nameValue){
     const removeButton = document.createElement('button')
     removeButton.innerHTML = "X"
     removeButton.setAttribute('id', `remove${nameValue.toLowerCase()}`)
-    removeButton.classList.add(`${nameValue.toLowerCase()}`)
+    // removeButton.classList.add(`${nameValue.toLowerCase()}`)
     removeButton.classList.add('removeButton')
  
     removeButton.addEventListener('click', removeNameFromList)
@@ -93,6 +93,7 @@ function addHoursAndFoodToBartender(nameValue, nameContainer){
    hoursInput.placeholder = `Enter hours for ${nameValue}`
    hoursInput.classList.add('hoursAmount')
    hoursInput.setAttribute('id', `${nameValue}Hours`)
+   console.log(nameValue)
     // Add food field input
    const foodInput = document.createElement('input')
    foodInput.type = 'number'
@@ -116,10 +117,11 @@ function addHoursAndFoodToBartender(nameValue, nameContainer){
 }
 
 calculateButton.addEventListener('click', handleCalculateTips)
-// calculateButton.addEventListener('touchstart', handleCalculateTips)
+calculateButton.addEventListener('touchstart', handleCalculateTips)
 
 
 function handleCalculateTips(){
+    alert('working')
     if(tipField.value == ""){
         alert('Please enter tip value')
         return
