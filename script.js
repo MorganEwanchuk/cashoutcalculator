@@ -121,7 +121,7 @@ calculateButton.addEventListener('click', handleCalculateTips)
 
 
 function handleCalculateTips(){
-    alert('working')
+    alert(names[0].name)
     if(tipField.value == ""){
         alert('Please enter tip value')
         return
