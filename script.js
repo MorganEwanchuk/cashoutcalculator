@@ -116,6 +116,8 @@ function addHoursAndFoodToBartender(nameValue, nameContainer){
 }
 
 calculateButton.addEventListener('click', handleCalculateTips)
+calculateButton.addEventListener('touchstart', handleCalculateTips)
+
 
 function handleCalculateTips(){
     if(tipField.value == ""){
