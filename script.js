@@ -39,7 +39,7 @@ addName.addEventListener('keydown', (event) => {
 let removeButton = document.getElementsByClassName('removeButton')
 function addNameToList(nameValue){
     // Add key values to each name object
-    names[count] = {name: nameValue}
+    names[count] = {name: nameValue.toLowerCase()}
     names[count].hours = 0
     names[count].tips = 0
     names[count].food = 0
@@ -135,6 +135,7 @@ function handleCalculateTips(){
     for(let i = 0; i < size; i++){
         console.log(names)
         console.log(`${names[i].name}`)
+        
         const bartenderHours = document.getElementById(`${names[i].name}Hours`)
         const bartenderFood = document.getElementById(`${names[i].name}Food`)
         names[i].hours = bartenderHours.value
