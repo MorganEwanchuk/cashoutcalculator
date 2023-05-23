@@ -38,7 +38,7 @@ input{
     display: flex;
     flex-wrap: wrap;
     margin-top: 20px;
-    height: 200px;
+    max-height: 200px;
     max-width: 100%;
     overflow: auto;
     flex-direction: column;
@@ -56,7 +56,9 @@ input{
     flex: 1;
     flex-wrap: wrap;
     overflow: hidden;
+    min-width: 33%;
     max-width: 50%;
+    max-height: 33%;
     flex-basis: 33%;
 }
 .nameContainer input{
@@ -70,6 +72,7 @@ input{
     /* display: flex; */
     justify-content: center;
     margin: 0;
+    flex-grow: 0;
 }
 .nameContainer button{
     flex-basis: 25%;
