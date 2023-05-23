@@ -89,32 +89,32 @@ function renderNameToList(nameValue){
 
 function addHoursAndFoodToBartender(nameValue, nameContainer){
    // Add hours field input
+   console.log(nameValue)
+   let capitalizedName = capitalizeName(nameValue)
+//    capitalizedName = capitalizedName.split("")
+//    capitalizedName[0] = capitalizedName[0].toUpperCase()
+//    capitalizedName = capitalizedName.join("")
    const hoursInput = document.createElement('input')
    hoursInput.type = 'number'
-   hoursInput.placeholder = `Enter hours for ${nameValue}`
+   hoursInput.placeholder = `Enter hours for ${capitalizedName}`
    hoursInput.classList.add('hoursAmount')
    hoursInput.setAttribute('id', `${nameValue}Hours`)
    console.log(nameValue)
     // Add food field input
    const foodInput = document.createElement('input')
    foodInput.type = 'number'
-   foodInput.placeholder = `Enter food for ${nameValue}`
+   foodInput.placeholder = `Enter food for ${capitalizedName}`
    foodInput.setAttribute('id', `${nameValue}Food`)
 
-   // Add remove button
-//    const removeButton = document.createElement('button')
-//    removeButton.innerHTML = "X"
-//    removeButton.setAttribute('id', `remove${nameValue}`)
-//    removeButton.classList.add(`${nameValue}`)
-//    removeButton.classList.add('removeButton')
-
-//    removeButton.addEventListener('click', removeNameFromList)
-
-    // Attaches both inputs to entered name
-    // nameContainer.appendChild(removeButton)
     nameContainer.appendChild(hoursInput) 
     nameContainer.appendChild(foodInput) 
-
+};
+function capitalizeName(name){
+   let capitalizedName = String(name)
+   capitalizedName = capitalizedName.split("")
+   capitalizedName[0] = capitalizedName[0].toUpperCase()
+   capitalizedName = capitalizedName.join("")
+   return capitalizedName
 }
 
 calculateButton.addEventListener('click', handleCalculateTips)
