@@ -124,6 +124,9 @@ input{
 .tillCalculator{
     display: flex;
 }
+li{
+    list-style-type: none;
+}
 #tillOutput{
     align-self: center;
     justify-self: center;
