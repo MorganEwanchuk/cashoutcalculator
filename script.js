@@ -286,6 +286,8 @@ const tillNumbers = document.getElementsByClassName('tillNumber')
 const addTill = document.getElementById('addTill')
 addTill.addEventListener('click', calculateTill)
 function calculateTill(){
+    const elements = document.querySelectorAll('.tillCalculation')
+
     const coinAmount = document.getElementById('coinAmount').value
     const otherAmount = document.getElementById('otherAmount').value
     let otherAndCoinAmount = Number(coinAmount) + Number(otherAmount)
@@ -302,8 +304,10 @@ function calculateTill(){
     console.log(totalTillNumber)
     console.log(otherAndCoinAmount)
     console.log(tillAmountsArray)
-
-    clearTillFunction()
+    elements.forEach(element => {
+        element.remove()
+    })
+    // clearTillFunction()
     let tillOutput = document.getElementById('tillOutput')
     let finalTillOutput = document.createElement('h2')
     finalTillOutput.classList.add('tillCalculation')
@@ -316,8 +320,13 @@ clearTill.addEventListener('click', clearTillFunction)
 
 function clearTillFunction(){
     const elements = document.querySelectorAll('.tillCalculation')
-   
+    const allTillNumbers = document.querySelectorAll('.allTillNumbers')
     elements.forEach(element => {
         element.remove()
     })
+    allTillNumbers.forEach(element => {
+        element.value = ""
+    })
+
+
 }
