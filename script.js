@@ -303,11 +303,21 @@ function calculateTill(){
     console.log(otherAndCoinAmount)
     console.log(tillAmountsArray)
 
+    clearTillFunction()
     let tillOutput = document.getElementById('tillOutput')
     let finalTillOutput = document.createElement('h2')
+    finalTillOutput.classList.add('tillCalculation')
     finalTillOutput.innerHTML = `Total : ${totalTillNumber}`
     tillOutput.appendChild(finalTillOutput)
-// addTill.addEventListener('')
+};
 
+const clearTill = document.getElementById('clearTill')
+clearTill.addEventListener('click', clearTillFunction)
 
+function clearTillFunction(){
+    const elements = document.querySelectorAll('.tillCalculation')
+   
+    elements.forEach(element => {
+        element.remove()
+    })
 }
