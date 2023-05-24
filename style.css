@@ -134,3 +134,11 @@ li{
     align-self: center;
     justify-self: center;
 }
+#billAmounts{
+    display: flex;
+    flex-direction: column;
+}
+#tillCalculation{
+    margin-top: 28px;
+    display: flex;
+}
