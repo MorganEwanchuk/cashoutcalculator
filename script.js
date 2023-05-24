@@ -282,6 +282,8 @@ function pushResults(names){
 const tillNumbers = document.getElementsByClassName('tillNumber')
 const addTill = document.getElementById('addTill')
 addTill.addEventListener('click', calculateTill)
+const billAmounts = document.getElementById('billAmounts')
+
 function calculateTill(){
     const elements = document.querySelectorAll('.tillCalculation')
 
@@ -296,15 +298,21 @@ function calculateTill(){
         let number = tillNumbers[i].id * tillNumbers[i].value
         tillAmountsArray.push(number)
     }
-
+    // clearTillFunction()
+    resetTillCalculation()
     let totalTillNumber = tillAmountsArray.reduce((a,b) => a + b) + otherAndCoinAmount
     console.log(totalTillNumber)
     console.log(otherAndCoinAmount)
     console.log(tillAmountsArray)
+    for(let i = 0; i < tillAmountsArray.length; i++){
+        const totalNumber = document.createElement('span')
+        totalNumber.classList.add('totalBillAmounts')
+        totalNumber.innerHTML = `$${tillNumbers[i].id}: ${tillAmountsArray[i]}`
+        billAmounts.appendChild(totalNumber)
+    }
     elements.forEach(element => {
         element.remove()
     })
-    // clearTillFunction()
     let tillOutput = document.getElementById('tillOutput')
     let finalTillOutput = document.createElement('h2')
     finalTillOutput.classList.add('tillCalculation')
@@ -318,12 +326,25 @@ clearTill.addEventListener('click', clearTillFunction)
 function clearTillFunction(){
     const elements = document.querySelectorAll('.tillCalculation')
     const allTillNumbers = document.querySelectorAll('.allTillNumbers')
+    const totalBillAmounts = document.querySelectorAll('.totalBillAmounts')
     elements.forEach(element => {
         element.remove()
     })
     allTillNumbers.forEach(element => {
         element.value = ""
     })
-
-
+    totalBillAmounts.forEach(element =>{
+        element.remove()
+    })
+}
+function resetTillCalculation(){
+    const elements = document.querySelectorAll('.tillCalculation')
+    
+    const totalBillAmounts = document.querySelectorAll('.totalBillAmounts')
+    elements.forEach(element => {
+        element.remove()
+    })
+    totalBillAmounts.forEach(element =>{
+        element.remove()
+    })
 }
