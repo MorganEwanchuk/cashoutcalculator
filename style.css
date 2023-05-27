@@ -142,3 +142,10 @@ li{
     margin-top: 28px;
     display: flex;
 }
+.tillEntry{
+    display: flex;
+}
+.tillEntry *{
+    flex: 1;
+    flex-basis: 50%;
+}
