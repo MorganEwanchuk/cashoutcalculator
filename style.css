@@ -133,6 +133,8 @@ li{
 #tillOutput{
     align-self: center;
     justify-self: center;
+    flex: 1;
+    flex-basis: fill;
 }
 #billAmounts{
     display: flex;
@@ -145,6 +147,18 @@ li{
 .tillEntry{
     display: flex;
 }
+
+#billAmounts{
+    display: flex;
+    flex: 1;
+    flex-basis: fill;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+}
+/* #billAmounts *{
+    flex: 1;
+    flex-basis: 100%;
+} */
 .tillEntry *{
     flex: 1;
     flex-basis: 50%;
