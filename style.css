@@ -35,7 +35,10 @@ input{
     border-radius: 3px;
 }
 input:focus{
-    background-color: whitesmoke;
+    /* background-color: whitesmoke; */
+    /* border: 1px solid blue; */
+    /* box-shadow: 0 0 10px #719ECE; */
+    outline-color: #0ea5e9;
 }
 #bartenderNames{
     display: flex;
