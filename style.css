@@ -120,11 +120,11 @@ input:focus{
     margin-top: 20px;
 
 }
-#functionButtons{
+.functionButtons{
     display: flex;
     margin-top: 20px;
 }
-#calculate,#clear{
+#calculate,#clear,#addTill,#clearTill{
     width: 50%;
 }
 .tillCalculator{
