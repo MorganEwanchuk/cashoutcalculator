@@ -137,7 +137,8 @@ li{
     align-self: center;
     justify-self: center;
     flex: 1;
-    flex-basis: fill;
+    white-space: wrap;
+    /* flex-basis: fill; */
 }
 #billAmounts{
     display: flex;
@@ -146,6 +147,7 @@ li{
 #tillCalculation{
     margin-top: 28px;
     display: flex;
+    flex-direction: column;
 }
 .tillEntry{
     display: flex;
