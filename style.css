@@ -129,6 +129,7 @@ input:focus{
 }
 .tillCalculator{
     display: flex;
+    overflow: scroll;
 }
 li{
     list-style-type: none;
@@ -138,7 +139,6 @@ li{
     justify-self: center;
     flex: 1;
     white-space: wrap;
-    /* flex-basis: fill; */
 }
 #billAmounts{
     display: flex;
@@ -160,11 +160,10 @@ li{
     flex-wrap: nowrap;
     white-space: nowrap;
 }
-/* #billAmounts *{
-    flex: 1;
-    flex-basis: 100%;
-} */
 .tillEntry *{
     flex: 1;
     flex-basis: 50%;
+}
+.tillOutputCalculation{
+    display: inline;
 }
