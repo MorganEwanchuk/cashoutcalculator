@@ -286,6 +286,7 @@ const billAmounts = document.getElementById('billAmounts')
 
 function calculateTill(){
     const elements = document.querySelectorAll('.tillCalculation')
+    const tillOutput = document.getElementById('tillOutput')
 
     const coinAmount = document.getElementById('coinAmount').value
     const otherAmount = document.getElementById('otherAmount').value
@@ -313,16 +314,17 @@ function calculateTill(){
     elements.forEach(element => {
         element.remove()
     })
-    let tillOutput = document.getElementById('tillOutput')
+    
+    // let tillOutput = document.getElementById('tillOutput')
     let finalTillOutput = document.createElement('h2')
-    finalTillOutput.classList.add('tillOutPutCalculation')
+    finalTillOutput.classList.add('tillOutputCalculation')
     finalTillOutput.innerHTML = `Total:${totalTillNumber}`
     tillOutput.appendChild(finalTillOutput)
 };
 
 const clearTill = document.getElementById('clearTill')
 clearTill.addEventListener('click', clearTillFunction)
-
+clearTill.addEventListener('click', resetTillCalculation)
 function clearTillFunction(){
     const elements = document.querySelectorAll('.tillCalculation')
     const allTillNumbers = document.querySelectorAll('.allTillNumbers')
@@ -336,15 +338,24 @@ function clearTillFunction(){
     totalBillAmounts.forEach(element =>{
         element.remove()
     })
+    
+
 }
 function resetTillCalculation(){
     const elements = document.querySelectorAll('.tillCalculation')
-    
+    const tillOutput = document.querySelectorAll('.tillOutputCalculation')
     const totalBillAmounts = document.querySelectorAll('.totalBillAmounts')
     elements.forEach(element => {
         element.remove()
     })
     totalBillAmounts.forEach(element =>{
+        element.remove()
+    })
+    // allTillNumbers.forEach(element => {
+    //     element.value = ""
+    // })
+    console.log(tillOutput)
+    tillOutput.forEach(element => {
         element.remove()
     })
 }
