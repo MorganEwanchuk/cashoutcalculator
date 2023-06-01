@@ -315,7 +315,7 @@ function calculateTill(){
     })
     let tillOutput = document.getElementById('tillOutput')
     let finalTillOutput = document.createElement('h2')
-    finalTillOutput.classList.add('tillCalculation')
+    finalTillOutput.classList.add('tillOutPutCalculation')
     finalTillOutput.innerHTML = `Total:${totalTillNumber}`
     tillOutput.appendChild(finalTillOutput)
 };
