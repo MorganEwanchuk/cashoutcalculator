@@ -167,3 +167,6 @@ li{
 .tillOutputCalculation{
     display: inline;
 }
+#tillBills h2{
+    text-decoration-line: underline;
+}
