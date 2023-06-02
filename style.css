@@ -129,7 +129,7 @@ input:focus{
 }
 .tillCalculator{
     display: flex;
-    overflow: scroll;
+    overflow: hidden;
 }
 li{
     list-style-type: none;
