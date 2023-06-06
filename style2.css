@@ -6,12 +6,12 @@ body{
     max-width: 100vw;
     margin: 0;
     padding: 0;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 0.3fr 1fr 0.3 1fr 1fr;
 }
 header{
     display: flex;
-    grid-column: 1 / 3;
+    grid-column: 1 / 4;
     margin: 0;
     margin-bottom: 30px;
     height: 100px;
@@ -29,7 +29,7 @@ header h1{
 }
 #bartenderAndTipsContainer{
     display: flex;
-    grid-column: 1 /3;
+    grid-column: 1 / 4;
     flex-direction: column;
 }
 #addTips{
@@ -37,14 +37,63 @@ header h1{
     align-self: center;
     margin: auto;
 }
-.totalTipsContainer{
+.totalTipsContainer,#addContainer{
     align-self: center;
     margin: auto;
 }
 #addContainer{
     display: flex;
-    
+}
+.functionButtons{
+    display: flex;
+}
+.functionButtons *{
+    flex-basis: 50%;
 }
 #output{
     grid-column: 1 / 3;
 }
+.tillCalculator{
+    grid-column: 1 / 3;
+    display: flex;
+}
+#bartenderNames{
+    display: grid;
+    width: 100vw;
+    /* grid-template-columns: 1fr 1fr 1fr; */
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+    overflow: auto;
+}
+.nameContainer{
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1;
+}
+
+.nameContainer p{
+    flex-basis: 75%;
+    margin-top: 33px;
+    margin-left: 5px;
+    margin-bottom: 0px;
+}
+.removeButton{
+    flex-basis: 25%;
+    max-width: 15px;
+    max-height: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 33px;
+}
+
+
+
+ /* .nameContainer{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.removeButton{
+    grid-column: 1 /2;
+    width: 15px;
+} */
