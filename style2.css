@@ -59,16 +59,14 @@ header h1{
 }
 #bartenderNames{
     display: grid;
-    width: 100vw;
-    /* grid-template-columns: 1fr 1fr 1fr; */
-    grid-template-columns: repeat(3, 1fr);
-    gap: 5px;
+    grid-template-columns: repeat(auto-fit, minmax(50%, 1fr));
+    gap: 0;
     overflow: auto;
 }
 .nameContainer{
     display: flex;
     flex-wrap: wrap;
-    flex: 1;
+    
 }
 
 .nameContainer p{
