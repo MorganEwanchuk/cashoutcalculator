@@ -10,7 +10,7 @@ body{
     grid-template-rows: 0.3fr 1fr 0.3 1fr 1fr;
 }
 
-/* Header and bartender containers */
+/* Header, tips and bartender containers */
 header{
     display: flex;
     grid-column: 1 / 4;
@@ -69,9 +69,9 @@ input{
 }
 #bartenderNames{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(33%, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(50%, 1fr));
     gap: 0;
-    overflow: auto;
+    overflow: hidden;
 }
 #bartenderNames input{
     flex-basis: 33%;
@@ -98,6 +98,8 @@ input{
     margin-top: 33px;
 }
                 /*     */
+
+/*  Start of Till styling */
 
 .tillCalculator{
     grid-column: 1 / 3;
