@@ -70,8 +70,8 @@ input{
 #bartenderNames{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(50%, 1fr));
-    gap: 0;
-    overflow: hidden;
+    /* grid-template-columns: 1fr 1fr 1fr; */
+    
 }
 #bartenderNames input{
     flex-basis: 33%;
@@ -79,7 +79,6 @@ input{
 .nameContainer{
     display: flex;
     flex-wrap: wrap;
-    
 }
 
 .nameContainer p{
