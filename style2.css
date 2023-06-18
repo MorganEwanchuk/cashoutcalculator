@@ -100,6 +100,24 @@ input{
     align-items: center;
     margin-top: 33px;
 }
+
+#output{
+    display: flex;
+    flex-wrap: wrap;
+}
+#output h3{
+    flex-basis: 50%;
+    text-decoration: underline;
+}
+#output h2{
+    flex-basis: 100%;
+}
+#output p{
+    text-align: center;
+    font-size: 1.3em;
+    flex-basis: 50%;
+    /* flex: 1; */
+}
                 /*     */
 
 /*  Start of Till styling */
