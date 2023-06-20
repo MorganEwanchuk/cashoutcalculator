@@ -129,6 +129,22 @@ input{
     grid-row: 4 / 5;
     display: flex;
 }
+.tillCalculator h2{
+    text-decoration: underline;
+}
+li{
+    list-style-type: none;
+}
+.tillEntry{
+    display: flex;
+    
+}
+.tillEntry span{
+    flex-basis: 10%;
+}
+
+
+
 .mugBackground{
     grid-row: 4;
     grid-column: 1 / 2;
@@ -137,6 +153,7 @@ input{
 .mugBackground img{
    width: 80vw;
 }
+
 
 
 
