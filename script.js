@@ -273,12 +273,18 @@ function pushResults(names){
     header.innerHTML = "Tip amounts:"
     output.appendChild(header)
 
+    console.log(names)
+    
+    
+
     for(let i = 0; i < size; i++){
         const bartenderTip = document.createElement('p')
-        bartenderTip.innerHTML = `${names[i].name}: ${names[i].tips}`
+        // names[i].name = names[i].name.charAt(0).toUpperCase() + names[i].name.slice(1)
+        bartenderTip.innerHTML = `${capitalizeName(names[i].name)}: ${names[i].tips}`
         output.appendChild(bartenderTip)
     }
 }
+
 const tillNumbers = document.getElementsByClassName('tillNumber')
 const addTill = document.getElementById('addTill')
 addTill.addEventListener('click', calculateTill)
