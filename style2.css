@@ -137,12 +137,15 @@ li{
 }
 .tillEntry{
     display: flex;
-    
+    justify-content: space-between;
 }
 .tillEntry span{
-    flex-basis: 10%;
-    
+    flex-basis: 10%;    
 }
+.tillEntry input{
+    flex-basis: 80%;
+}
+
 #tillCalculation{
     margin-top: 65px;
     flex-basis: 50%;
