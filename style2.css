@@ -116,7 +116,7 @@ input{
 }
 #output p{
     font-size: 1.3em;
-    flex-basis: 100%;
+    flex-basis: 45%;
     margin: 10px 5px;
     text-decoration: underline;
 }
@@ -141,8 +141,22 @@ li{
 }
 .tillEntry span{
     flex-basis: 10%;
+    
 }
+#tillCalculation{
+    margin-top: 65px;
+    flex-basis: 50%;
 
+}
+#tillBills{
+    flex-basis: 50%;
+}
+#billAmounts{
+    display: flex;
+    flex-direction: column; 
+    flex-basis: 50%;
+
+}
 
 
 .mugBackground{
