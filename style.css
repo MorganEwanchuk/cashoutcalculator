@@ -163,6 +163,7 @@ li{
 .tillEntry *{
     flex: 1;
     flex-basis: 50%;
+    
 }
 .tillOutputCalculation{
     display: inline;
