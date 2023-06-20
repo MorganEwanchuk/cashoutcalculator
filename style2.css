@@ -137,19 +137,18 @@ li{
 }
 .tillEntry{
     display: flex;
-    justify-content: space-between;
 }
+
 .tillEntry span{
-    flex-basis: 10%;    
+    min-width: 45px;
+    margin-right: 20px;
 }
-.tillEntry input{
-    flex-basis: 80%;
-}
+
 
 #tillCalculation{
     margin-top: 65px;
     flex-basis: 50%;
-
+    grid-column: 2 / 3;
 }
 #tillBills{
     flex-basis: 50%;
@@ -160,7 +159,9 @@ li{
     flex-basis: 50%;
 
 }
-
+.tillCalculator .functionButtons{
+    /* width: 100%; */
+}
 
 .mugBackground{
     grid-row: 4;
