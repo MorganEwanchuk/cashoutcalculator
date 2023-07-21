@@ -189,6 +189,19 @@ function hourlyRate(tips){
     return rate
 }
 function divideFood(names){
+    
+    if(size === 2){
+        
+
+
+            names[0].tips += names[1].food / 2
+            names[1].tips += names[0].food / 2
+        
+            names[0].tips -= names[0].food / 2 
+            names[1].tips -= names[1].food / 2
+        }
+    else{
+
     for(let i = 0; i < size; i++){
         const currentName = names[i].name
         const divideFood = names[i].food / (size - 1)
@@ -205,6 +218,7 @@ function divideFood(names){
             
         }
     }
+}
 }
 function distributeFood(name, food){
     for(let i = 0; i < size; i++){

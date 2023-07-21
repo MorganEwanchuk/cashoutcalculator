@@ -38,7 +38,7 @@ header h1{
 
 }
 .bartenderName{
-    overflow: none;
+    overflow: hidden;
 }
 #addTips{
     text-align: center;
@@ -75,6 +75,7 @@ input{
 #bartenderNames{
     /* display: grid; */
     /* grid-template-columns: repeat(auto-fit, minmax(50%, 1fr)); */
+    grid-column: 1 / 4;
     display: flex;
     flex-wrap: wrap;
 }
